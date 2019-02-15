@@ -28,6 +28,6 @@ export default class Song {
     }
 
     getSong() {
-        return `<source src="${this.preview}" type="audio/mpeg">Card link</source>`
+        return `${this.preview}`
     }
 }

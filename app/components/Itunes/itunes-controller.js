@@ -29,7 +29,8 @@ export default class ItunesController {
     var artist = e.target.artist.value;
     //changes the button to loading while songs load
     document.querySelector('#get-music-button').textContent = 'LOADING....'
-    _is.getMusicByArtist(artist)
+    _is.getMusicByArtist(artist);
+    e.target.reset();
   }
   getSong(url) {
     document.querySelector('#player').innerHTML = `
