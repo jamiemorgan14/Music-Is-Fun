@@ -15,9 +15,9 @@ function setState(prop, data) {
 }
 
 //DO NOT MODIFY
-class ItunesService {
+export default class ItunesService {
   get Songs() {
-    return _state.songs
+    return _state.songs.map(song => new Song(song))
   }
 
   getMusicByArtist(artist) {
@@ -25,6 +25,7 @@ class ItunesService {
     // @ts-ignore
     $.getJSON(url)
       .then(res => {
+        console.log(res.results)
         let results = res.results.map(s => new Song(s))
         setState('songs', results)
       })
@@ -34,8 +35,5 @@ class ItunesService {
   addSubscriber(prop, fn) {
     _subscribers[prop].push(fn)
   }
+
 }
-
-
-
-export default ItunesService
