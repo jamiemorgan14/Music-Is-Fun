@@ -7,22 +7,20 @@ export default class Song {
         this.collection = song.collectionName || song.collection
         this.price = song.collectionPrice || song.price
         this.preview = song.previewUrl || song.preview
+        this.kind = song.kind
     }
     getTemplate() {
         return `<div class="col-12 col-md-3">
-                    <div class="card">
+                    <div class="card my-3">
                         <img class="card-img-top" src="${this.albumArt}" alt="Card image cap">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${this.artist}</h5>
                             </div>
                             <ul class="list-group list-group-flush text-center">
-                                <li class="list-group-item">${this.title}</li>
+                                <li class="list-group-item"><a href="#"  onclick="(app.controllers.itunesCtrl.getSong('${this.preview}'))">${this.title}</a></li>
                                 <li class="list-group-item">${this.collection}</li>
                                 <li class="list-group-item">${this.price}</li>
                             </ul>
-                            <div class="card-body">
-                                <button class="btn btn-danger" onClick="(app.controllers.itunesCtrl.getSong('${this.preview}'))">Play Song</button>
-                            </div>
                         </div>
             </div>`
     }

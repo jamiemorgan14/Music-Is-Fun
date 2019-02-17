@@ -6,7 +6,7 @@ function drawSongs() {
   //changes button back to GET MUSIC once songs are loaded
   document.querySelector('#get-music-button').textContent = 'GET MUSIC'
   let template = '';
-  let songs = _is.Songs;
+  let songs = _is.Songs.filter(track => track.kind == 'song');
   songs.forEach(song => template += song.getTemplate())
   document.querySelector('#songs').innerHTML = template;
 }

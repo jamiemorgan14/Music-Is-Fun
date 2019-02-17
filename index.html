@@ -11,16 +11,27 @@
 </head>
 
 <body>
-    <form class="form-inline" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
-        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
-        <div class="form-group">
-            <input type="text" class="form-control" name="artist" placeholder="Artist Name" />
-            <button type="submit" class="btn btn-primary" id="get-music-button">Get Music</button>
-            <div id="player">
+    <section class="container-fluid upper-bg">
+        <form class="row form-inline h-75" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
+            <div class="col-sm-12 col-md-7">
+                <div class="form-group d-flex justify-content-end align-items-center">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="artist" placeholder="Find your song." aria-label="Recipient's username"
+                            aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" id="get-music-button">Get Music</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <div class="row d-flex justify-content-end">
+            <div class="col-sm-12 col-md-4" id="player">
 
             </div>
         </div>
-    </form>
+    </section>
     <section class="container-fluid">
         <div class="row text-center" id="songs">
 
